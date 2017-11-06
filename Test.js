@@ -33,10 +33,11 @@ Test.StartGame = function(){
 
     function findCollection(){
         var targetObj = {r:inputRow, c:inputCol, val: arr[inputRow][inputCol]};
-        var toprocess = [targetObj];
+        var arrProc = [];
+        arrProc.push(targetObj);
         var collection = [];
-        while (toprocess.length > 0) {
-            var curNum = toprocess.pop();
+        while (arrProc.length > 0) {
+            var curNum = arrProc.pop();
             if(curNum.val != targetObj.val)
                 continue;
             else{
@@ -54,7 +55,7 @@ Test.StartGame = function(){
                 for(var i=0; i<neighbors.length; i++){
 
                      if(neighbors[i].val == targetObj.val){
-                         toprocess.push(neighbors[i]);
+                         arrProc.push(neighbors[i]);
                      }
                 }
             }
