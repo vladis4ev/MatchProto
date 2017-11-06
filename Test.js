@@ -40,14 +40,14 @@ Test.StartGame = function(){
             if(curNum.val != targetObj.val)
                 continue;
             else{
-                var mach = false;
+                var match = false;
                 for(var j=0; j<collection.length; j++){
                     if(curNum.r == collection[j].r && curNum.c == collection[j].c && curNum.val == collection[j].val){
-                        mach = true;
+                        match = true;
                         break;
                     }
                 }
-                if(mach)
+                if(match)
                     continue;
                 collection.push(curNum);
                 var neighbors = getNeighbors(curNum);
