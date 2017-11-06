@@ -13,7 +13,7 @@ Test.StartGame = function(){
 
     for(var row = 0; row < arr.length; row++) {
         for (var col = 0; col < arr[row].length; col++) {
-            arr[row][col] = getRandomInt(0, lenthArr);
+            arr[row][col] = getRandomInt(0, 4/*lenthArr*/);
         }
         console.log(arr[row] + "\n");
     }
@@ -34,7 +34,7 @@ Test.StartGame = function(){
     function findCollection(){
         var targetObj = {r:inputRow, c:inputCol, val: arr[inputRow][inputCol]};
         var arrProc = [];
-        arrProc.push(targetObj);
+        arrProc[0] = targetObj;
         var collection = [];
         while (arrProc.length > 0) {
             var curNum = arrProc.pop();
